@@ -4,9 +4,9 @@ const { createApp } = Vue;
 
 const app = createApp({
     name: "carousel",
-    data: () => {
-        destinations;
-    },
+    data: () => ({
+        destinations: destinations
+    }),
 
     methods: {
         prevButton(){
