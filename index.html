@@ -19,9 +19,12 @@
   <!-- Style -->
   <link rel="stylesheet" href="css/style.css" />
 
+  <!-- Vue 3  -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
   <!-- JavaScript -->
   <script src="js/data.js"></script>
-  <script defer src="js/js_script.js"></script>
+  <script defer src="js/script.js"></script>
 
 </head>
 
@@ -30,7 +33,7 @@
   <div class="container">
     <div id="carousel">
       <!-- Prev button -->
-      <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button"></i>
+      <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button" @click="prevButton"></i>
 
       <!-- Gallery -->
       <div class="gallery">
@@ -44,12 +47,12 @@
       </div>
 
       <!-- next button -->
-      <i id="next-button" class="bi bi-arrow-right-circle-fill" role="button"></i>
+      <i id="next-button" class="bi bi-arrow-right-circle-fill" role="button" @click="nextButton"></i>
     </div>
 
     <!-- Thumbnails -->
     <div id="thumbnails">
-      <img src="img/01.jpg" alt="Svezia" class="active">
+      <img v-for="destination in destinations" :src="`img/${destination.image}`" alt="Svezia" class="active">
     </div>
 
     <!-- <div class="autoplay-controls">
